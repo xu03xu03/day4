@@ -1,0 +1,51 @@
+/*title {
+    text-align: center;} /* 將網頁內容置中 */
+
+
+nav {
+    float: right; /* 將選單浮動到右邊 */
+    
+}
+
+
+form {
+    max-width: 500px; /* 設定表單最大寬度 */
+    margin: 0 auto; /* 讓表單水平居中 */
+    padding: 20px; /* 添加內邊距 */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="submit"] {
+    width: 100%; /* 讓輸入框和按鈕寬度充滿父容器 */
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* 在小型設備上調整表單元素的樣式 */
+@media screen and (max-width: 600px) {
+    input[type="text"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="time"],
+    input[type="submit"] {
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+}

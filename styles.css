@@ -1,0 +1,21 @@
+    main {
+        padding: 2rem;
+    }
+    
+    section {
+        margin-bottom: 2rem;
+    }
+    
+    footer {
+        background-color: #424242;
+        color: #fff;
+        text-align: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 10px 0; /* 添加上下間距 */
+
+    }
+   
+    
