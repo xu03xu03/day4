@@ -15,16 +15,41 @@
             max-width: 150px;
             height: auto;
         }
+        header {
+            text-align: center; /* 文字置中 */
+            /*padding: 20px 0; /* 上下 padding */
+            /*background-color:#f8f9fa; /* header 背景色 */
+            background-color: #6bb0f5;
+        }
+        header h1 {
+            margin-left: 300px; /* 清除預設 margin */
+            color: #333; /* h1 標題顏色 */ 
+           
+        }
+       /* .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center; }/* 將大標題置中 */
+        .navbar {
+            background-color: #6bb0f5;} /* 背景色 */
+        
+        
     </style>
 </head>
 <body>
     <!-- 導覽列 Navbar 開始 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <header>
+    
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        
         <div class="container">
             <!-- LOGO -->
             <a class="navbar-brand" href="#">
                 <img src="./img/logo.PNG" alt="Q美學">
             </a>
+            <h1>Qiao美學</h1>
+        
             <!-- 導覽列折疊按鈕 -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,19 +59,20 @@
                 <ul class="navbar-nav">
                     <!-- 導覽連結 - 我要預約 -->
                     <li class="nav-item">
-                        <a class="nav-link" href="./beauty2.html">我要預約</a>
+                        <a class="nav-link" href="./beauty2.html"><strong>我要預約</strong></a>
                     </li>
                     <!-- 導覽連結 - 價目表 -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#price">價目表</a>
+                        <a class="nav-link" href="#price"><strong>價目表</strong></a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    </header>
     <!-- 導覽列 Navbar 結束 -->
 
-    <div class="container">
+    <div class="con">
         <main>
             <section id="intro">
                 <h2>個人介紹</h2>
