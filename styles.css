@@ -1,4 +1,4 @@
-    main {
+        main {
         padding: 2rem;
     }
     
@@ -7,8 +7,8 @@
     }
     
     footer {
-        background-color: #424242;
-        color: #fff;
+        background-color: #f8f675;
+        color: brown;
         text-align: center;
         position: fixed;
         left: 0;
@@ -17,5 +17,3 @@
         padding: 10px 0; /* 添加上下間距 */
 
     }
-   
-    
