@@ -1,14 +1,29 @@
-        main {
+     main {
         padding: 2rem;
+       
     }
     
     section {
         margin-bottom: 2rem;
     }
-    
+    #backToTop {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: #555;
+        color: black;
+        padding: 15px;
+        border-radius: 4px;
+      }
+
     footer {
-        background-color: #f424242;
-        color: white;
+        background-color: #ffdfdf;
+        color: black;
         text-align: center;
         position: fixed;
         left: 0;
@@ -17,3 +32,4 @@
         padding: 10px 0; /* 添加上下間距 */
 
     }
+   
