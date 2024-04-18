@@ -4,37 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>預約表單</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         /* 在這裡加入樣式設定 */
-        /*
         body {
-            text-align: center; }/* 將網頁內容置中 */
-        
-
-        form {
-            max-width: 500px; /* 設定表單最大寬度 */
-            margin: 0 auto; /* 讓表單水平居中 */
-            padding: 20px; /* 添加內邊距 */
+            display: flex;/* 將 body 設定為彈性容器，內容元素將以彈性布局排列 */
+            justify-content: center;/* 將內容水平居中 */
+            align-items: center;/* 將內容垂直居中 */
+            min-height: 100vh;/* 設定最小高度為視窗高度的100%，確保內容至少填滿一個視窗高度 */
+            margin: 0; /* 清除 body 的預設邊距 */
         }
 
-        h1 {
-            /*text-align: center; /* 將標題置中 */
-            margin-bottom: 20px; /* 添加底部間距 */
+        form {
+            max-width: 500px; /* 最大寬度為 500px */
+            padding: 20px; /* 內邊距設定為 20px */
+            border: 1px solid #ccc; /* 邊框寬度為 1px，顏色為灰色 */
+            border-radius: 5px; /* 邊框圓角半徑為 5px */
+            margin: 0 auto; /* 左右居中對齊 */
+            margin-top: 80px; /* 上邊距為 80px */
+            
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         label {
             display: block;
             margin-bottom: 10px;
+            
         }
+        
 
         input[type="text"],
         input[type="tel"],
         input[type="date"],
         input[type="time"],
         input[type="submit"] {
-            width: 100%; /* 讓輸入框和按鈕寬度充滿父容器 */
+            width: 100%;
             padding: 10px;
             margin-bottom: 15px;
             border-radius: 5px;
@@ -46,9 +55,10 @@
             color: #fff;
             border: none;
             cursor: pointer;
+            
         }
 
-        /* 在小型設備上調整表單元素的樣式 */
+
         @media screen and (max-width: 600px) {
             input[type="text"],
             input[type="tel"],
@@ -59,58 +69,89 @@
                 margin-bottom: 10px;
             }
         }
+        
+        footer {
+        background-color: #ffdfdf;
+        color: black;
+        text-align: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 10px 0; /* 添加上下間距 */
+
+    }
+
+        /* 導覽列樣式設定 */
         .navbar {
-            justify-content: flex-end; /* 將導覽列內容靠右對齊 */
-            position: fixed; /* 固定在畫面上方 */
-            top: 0; /* 距離畫面頂部的距離 */
-            width: 100%; /* 寬度佔滿整個畫面 */
+             position: fixed; /* 設定導覽列固定在畫面上 */
+             top: 0; /* 距離畫面頂部的距離為 0 */
+             right: 0; /* 將導覽列靠右對齊 */
+             left: auto; /* 不設定左側對齊，由右側自動調整 */
+             width: 100%; /* 寬度佔滿整個畫面 */
+             z-index: 1000; /* 設定堆疊順序，使導覽列在最上層 */
+        }
     </style>
 </head>
 <body>
-    <!--
-        <a href="index.html" style="position: absolute; top: 20px; right: 20px; font-weight: bold;" class="link-dark text-decoration-none">回首頁</a>
-        -->
-    <h1 class="text-center">預約表單</h1>
-    <form action="submit.php" method="post">
-        <label for="name">姓名：</label>
-        <input type="text" id="name" name="name" required><br>
 
-        <label for="phone">電話：</label>
-        <input type="tel" id="phone" name="phone" required><br>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #d9edf3;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Qiao美學</a>
+            <!-- 導覽列折疊按鈕 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- 導覽列連結 -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">價目表</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 預約表單 -->
+    
+    <main>
+        <form action="submit.php" method="post">
+            <h3>預約表單</h3>
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" required><br>
 
-        <label for="date">預約日期：</label>
-        <input type="date" id="date" name="date" required><br>
+            <label for="phone">電話：</label>
+            <input type="tel" id="phone" name="phone" required><br>
 
-        <label for="time">預約時段：</label>
-        <input type="time" id="time" name="time" required><br>
+            <label for="date">預約日期：</label>
+            <input type="date" id="date" name="date" required><br>
 
-        <label for="line">LINE：</label>
-        <input type="text" id="line" name="line" required><br>
+            <label for="time">預約時段：</label>
+            <input type="time" id="time" name="time" required><br>
 
-        <input type="submit" value="提交預約">
-    </form>
+            <label for="line">LINE：</label>
+            <input type="text" id="line" name="line" required><br>
 
-    <nav class="navbar navbar-expand-lg navbar-light mb-4">
-        <!-- 導覽列折疊按鈕 -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- 導覽列內容 -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-            <!-- 導覽連結 - 價目表 -->
-            <li class="nav-item">
-                <a class="nav-link" href="#price"><strong>價目表</strong></a>
-            </li>
-            <!-- 導覽連結 - 回首頁 -->
-            <li class="nav-item">
-                <a class="nav-link" href="./index.html"><strong>回首頁</strong></a>
-            </li>
-        </ul>
-    </div>
-</nav>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <input type="submit" value="提交預約">
+        </form>
+    </main>
+    <div><p style="height: 1000px;"></p></div>
+    <footer class=" py-4">
+        <div>
+            <p>&copy; 2024 QIAO美學</p>
+        </div>
+    </footer>
+
+
+    <!-- 引入 Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
